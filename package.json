@@ -5,6 +5,9 @@
   "repository": "git@github.com:ellamurii/furr-match-api.git",
   "author": "ellamurii <emb.baguio@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "dev": "nodemon src/index.ts"
+  },
   "dependencies": {
     "@prisma/client": "^5.6.0",
     "cors": "^2.8.5",
