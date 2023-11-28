@@ -1,4 +1,3 @@
-import { Get, Query, Route, Tags } from "tsoa";
 import { db } from "../database/prisma";
 import { Pet } from "@prisma/client";
 import { PaginationData } from "../types/common";
