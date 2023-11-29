@@ -31,4 +31,5 @@ jobs:
           echo "SUPABASE_KEY=${{env.SUPABASE_KEY}}" >> .env
           echo "SUPABASE_URL=${{env.SUPABASE_URL}}" >> .env
       - run: npm ci
+      - run: npm run build
       - run: pm2 restart furrmatch
