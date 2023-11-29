@@ -8,6 +8,7 @@ env:
   DATABASE_URL: ${{secrets.DATABASE_URL}}
   SUPABASE_KEY: ${{secrets.SUPABASE_KEY}}
   SUPABASE_URL: ${{secrets.SUPABASE_URL}}
+  PORT: ${{secrets.PORT}}
 
 jobs:
   build:
@@ -24,12 +25,13 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: "npm"
-      
+
       - name: Prepare Env
         run: |
           echo "DATABASE_URL=${{env.DATABASE_URL}}" >> .env
           echo "SUPABASE_KEY=${{env.SUPABASE_KEY}}" >> .env
           echo "SUPABASE_URL=${{env.SUPABASE_URL}}" >> .env
+          echo "PORT=${{env.PORT}}" >> .env
       - run: npm ci
       - run: npm run build
       - run: pm2 restart furrmatch
