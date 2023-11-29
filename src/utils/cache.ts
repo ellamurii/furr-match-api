@@ -15,10 +15,8 @@ class AppCache<T> {
     const cachedData = await this.cache.get(key);
 
     if (cachedData !== undefined) {
-      console.log(key, "cache hit");
       return cachedData;
     } else {
-      console.log(key, "cache missed");
       const newData = await callback();
 
       await this.cache.set(key, newData);
