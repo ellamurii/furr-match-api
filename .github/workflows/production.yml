@@ -33,5 +33,6 @@ jobs:
           echo "SUPABASE_URL=${{env.SUPABASE_URL}}" >> .env
           echo "PORT=${{env.PORT}}" >> .env
       - run: npm ci
+      - run: npx prisma generate
       - run: npm run build
       - run: pm2 restart furrmatch
